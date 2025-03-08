@@ -45,20 +45,30 @@ class _PageItemsState extends State<PageItems> {
             width: 120,
             height: 120,
           ),
-          Text(
-            widget.azkar,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              widget.azkar,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           SizedBox(height: 10),
           Text(
             '$counter',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 27),
           ),
           SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
+                  iconSize: 30,
                   onPressed: () {
                     setState(() {
                       counter++;
@@ -66,13 +76,15 @@ class _PageItemsState extends State<PageItems> {
                   },
                   icon: Icon(Icons.add)),
               IconButton(
+                  iconSize: 30,
                   onPressed: () {
                     setState(() {
                       counter = 0;
                     });
                   },
                   icon: Icon(Icons.refresh_outlined)),
-              IconButton(onPressed: speak, icon: Icon(Icons.hearing)),
+              IconButton(
+                  iconSize: 30, onPressed: speak, icon: Icon(Icons.hearing)),
             ],
           ),
         ],

@@ -17,8 +17,16 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.3
 
 flutter:
   uses-material-design: true
   assets:
     - assets/
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/quran.png"
+  adaptive_icon_background: "#ffffff"
+

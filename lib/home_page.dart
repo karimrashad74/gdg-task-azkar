@@ -11,6 +11,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final PageController controller = PageController();
+  final List<PageItems> azkarList = [
+    PageItems(azkar: "سُبْحَانَ اللَّهِ"),
+    PageItems(azkar: "الْحَمْدُ لِلَّهِ "),
+    PageItems(azkar: 'اللَّهُ أَكْبَرُ'),
+    PageItems(
+        azkar:
+            "لَا إِلهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ"),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,17 +38,13 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: PageView(
                 controller: controller,
-                children: [
-                  PageItems(azkar: "سُبْحَانَ اللَّهِ"),
-                  PageItems(azkar: "الْحَمْدُ لِلَّهِ "),
-                  PageItems(azkar: 'أَسْتَغْفِرُ اللَّهَ الْعَظِيم'),
-                ],
+                children: azkarList,
               ),
             ),
             SizedBox(height: 20),
             SmoothPageIndicator(
               controller: controller,
-              count: 3,
+              count: azkarList.length,
               effect: WormEffect(
                 activeDotColor: Colors.black,
                 dotColor: Colors.white,
